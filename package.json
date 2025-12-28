@@ -26,12 +26,12 @@
   },
   "scripts": {
     "sassTest": "sass --pkg-importer=node test:test/output",
-    "test": "npm run lint && mocha",
-    "pretest": "npm run build",
+    "test": "yarn lint && mocha",
+    "pretest": "yarn build",
     "build": "concat -o dist/_include-media.scss ./banner.txt src/_config.scss src/helpers/*.scss src/plugins/*.scss src/_media.scss",
     "postbuild": "node replace.mjs",
     "lint": "prettier --check src",
-    "prepublish": "npm run test",
+    "prepublish": "yarn test",
     "deploy": "gh-pages -d docs",
     "docs": "sassdoc src -c .sassdocrc"
   },
@@ -54,5 +54,6 @@
   },
   "pre-commit": [
     "lint"
-  ]
+  ],
+  "packageManager": "yarn@4.12.0"
 }
